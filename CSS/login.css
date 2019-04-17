@@ -3,13 +3,8 @@
     --input-padding-y: .75rem;
   }
   
-  /*body {
-    background: #007bff;
-    background: linear-gradient(to right, #0062E6, #33AEFF);
-  }*/
   body {
-    background-image: url("/images/bd.png");
-    background-repeat: no-repeat;
+    background: linear-gradient(to right, #ffffff, #33AEFF);
   }
   
   .card-signin {
@@ -103,12 +98,3 @@
     color: #777;
   }
   
-  .btn-google {
-    color: white;
-    background-color: #ea4335;
-  }
-  
-  .btn-facebook {
-    color: white;
-    background-color: #3b5998;
-  }
