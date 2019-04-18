@@ -4,6 +4,8 @@
   }
   
   body {
+    /*background: linear-gradient(to right, #ffffff, #33AEFF);
+    background-image: url("/leave-management/images/bd.png");*/
     background: linear-gradient(to right, #ffffff, #33AEFF);
   }
   
