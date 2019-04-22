@@ -11,15 +11,14 @@ if($utype == 1)
 {
     header("location: principal.php");
 }
-elseif($utype == 2)
-{
-    header("location: hod.php");
-}
 elseif($utype == 3)
 {
     header("location: faculty.php");
 }
-
+elseif($utype == 4)
+{
+    header("location: student.php");
+}
 ?>
 <!DOCTYPE html>
 <html>
@@ -32,7 +31,7 @@ elseif($utype == 3)
     <script src="main.js"></script>
 </head>
 <body>
-    <h1>Student </h1>
+    <h1>HOD </h1>
     <a href="/leave-management/PHP/logout.php">Sign Out..!</a>
 </body>
 </html>
