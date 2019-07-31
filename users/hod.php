@@ -1,23 +1,15 @@
 <?php
 session_start();
 
-if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true)
+if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] != true)
 {
     header("location: ../index.php");
     exit;
 }
 $utype=$_SESSION["usertype"];
-if($utype == 1)
+if($utype != 2)
 {
-    header("location: principal.php");
-}
-elseif($utype == 3)
-{
-    header("location: faculty.php");
-}
-elseif($utype == 4)
-{
-    header("location: student.php");
+    header("location: ../PHP/logout.php");
 }
 ?>
 <!DOCTYPE html>

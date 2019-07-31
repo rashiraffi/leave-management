@@ -100,7 +100,6 @@ if($_SERVER["REQUEST_METHOD"] == "POST" ){
                                     <label class="custom-control-label" for="customCheck1">Remember password</label>
                                 </div>
                                 <button class="btn btn-lg btn-primary btn-block text-uppercase" type="submit">Sign in</button>
-                                <span> <?php echo $utype; ?> </span>
                             </form>
                         </div>
                     </div>
