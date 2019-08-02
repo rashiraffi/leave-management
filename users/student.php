@@ -31,7 +31,7 @@
             $result="ERROR: Try again later..";
         }
     }
-    $records=mysqli_query($conn,"SELECT d_no, l_date, reason, status FROM Student_ldb WHERE u_id = $uid ORDER BY l_date DESC");
+    $records=mysqli_query($conn,"SELECT l_id, u_id, d_no, l_date, reason, status FROM Student_ldb WHERE u_id = $uid ORDER BY l_date DESC");
     
 ?>
 
@@ -51,11 +51,10 @@
     <body>
         <div class="topnav" id="myTopnav">
             <a href="#home" class="active">JECC</a>
-            <a href="#about">About</a>
             <a href="javascript:void(0);" class="icon" onclick="myFunction()">
                 <i class="fa fa-bars"></i>
             </a>
-</div>
+        </div>
         <h1>Welcome <?php echo $uid ?></h1>
         <div class="row">
             <div class="col-50-left open">
@@ -118,6 +117,7 @@
                     <th>No of Days</th>
                     <th>Reason</th>
                     <th >Status</th>
+                    <th >Delete</th>
                 </tr>
                 <?php
                     if(mysqli_num_rows($records)==0)
@@ -134,12 +134,15 @@
                             echo "<td>".$rec['d_no']."</td>";
                             echo "<td>".$rec['reason']."</td>";
                             echo "<td class='text-center'>".$rec['status']."</td>";
+                            echo "<td><a href='../PHP/sdel.php?id=".$rec['l_id']."&uid=".$rec['u_id']."'>delete</a></td>";
                         echo "</tr>";
                         
                     }
                 ?>
             </table>
-            
+        </div>
+        <div class="footer">
+            Copyright @2019
         </div>
     </body>
 </html>

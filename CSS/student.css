@@ -145,8 +145,8 @@ input[type=submit]{
 /******************************NAVBAR********************/
 
 .topnav {
-  background-color: #333;
-  overflow: hidden;
+  	background-color: #333;
+  	overflow: hidden;
 }
 
 .topnav a {
@@ -171,6 +171,20 @@ input[type=submit]{
 
 .topnav .icon {
   display: none;
+}
+.right{
+	float: right;
+}
+.footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: black;
+  color: white;
+  text-align: center;
+  padding: 8px;
+  color:white;
 }
 
 /******************************NAVBAR********************/
@@ -230,6 +244,10 @@ input[type=submit]{
     	float: none;
     	display: block;
     	text-align: left;
+  	}
+  	.footer
+  	{
+  		position: inherit;
   	}
 
 }
