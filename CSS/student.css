@@ -141,6 +141,13 @@ input[type=submit]{
 	background-color: #D2D2D2 ;
 	text-transform: uppercase;
 }
+.text-overflow
+{
+    max-width: 150px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+}
 
 /******************************NAVBAR********************/
 
@@ -249,6 +256,25 @@ input[type=submit]{
   	{
   		position: inherit;
   	}
-
+	.text-overflow
+	{
+	  max-width: 100px;
+	  text-overflow: ellipsis;
+	  overflow: hidden;
+	  white-space: nowrap;
+	}
+	.m-hide
+	{
+	  display: none;
+	}
 }
-
+@media screen and (min-width: 1200px)
+{
+    .text-overflow
+    {
+        max-width: 300px;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        white-space: nowrap;
+    }
+}

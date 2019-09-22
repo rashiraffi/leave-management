@@ -13,6 +13,7 @@
         header("location: ../PHP/logout.php");
     }
 
+
     $result="";
     if ($_SERVER["REQUEST_METHOD"] == "POST")
     {
@@ -32,7 +33,10 @@
         }
     }
     $records=mysqli_query($conn,"SELECT l_id, u_id, d_no, l_date, reason, status FROM Student_ldb WHERE u_id = $uid ORDER BY l_date DESC");
-    
+    $name=mysqli_query($conn,"SELECT s_name FROM student WHERE user_id = $uid");
+    $name = mysqli_fetch_assoc($name);
+    $name = $name['s_name'];
+
 ?>
 
 
@@ -45,7 +49,6 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" type="text/css" href="../CSS/student.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
         <script type="text/javascript" src="../js/student.js"></script>
     </head>
     <body>
@@ -55,7 +58,7 @@
                 <i class="fa fa-bars"></i>
             </a>
         </div>
-        <h1>Welcome <?php echo $uid ?></h1>
+        <h1>Welcome <?php echo $name ?></h1>
         <div class="row">
             <div class="col-50-left open">
                 <button id="showbutton" type="button" onclick="showform()" class="request-button"> Open Leave Form </button>
@@ -115,7 +118,7 @@
                 <tr>
                     <th>Date</th>
                     <th>No of Days</th>
-                    <th>Reason</th>
+                    <th class='m-hide' >Reason</th>
                     <th >Status</th>
                     <th >Delete</th>
                 </tr>
@@ -123,7 +126,7 @@
                     if(mysqli_num_rows($records)==0)
                     {
                         echo "<tr>";
-                            echo "<td colspan='4' class='text-center'> No History found </td>";
+                            echo "<td colspan='5' class='text-center'> No History found </td>";
                         echo "</tr>";
                     }
                     while ($rec = mysqli_fetch_assoc($records))
@@ -132,7 +135,7 @@
                         echo "<tr>";
                             echo "<td>".$rec['l_date']."</td>";
                             echo "<td>".$rec['d_no']."</td>";
-                            echo "<td>".$rec['reason']."</td>";
+                            echo "<td class='text-overflow m-hide' title='".$rec['reason']."'>".$rec['reason']."</td>";
                             echo "<td class='text-center'>".$rec['status']."</td>";
                             echo "<td><a href='../PHP/sdel.php?id=".$rec['l_id']."&uid=".$rec['u_id']."'>delete</a></td>";
                         echo "</tr>";
